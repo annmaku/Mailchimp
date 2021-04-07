@@ -74,9 +74,8 @@ public class StepDefinitions {
         signUpButton.click();
     }
 
-
     @Then("Registration is successful\\/unsuccessful, as displayed with {string}")
-    public void registrationIsSuccessfulUnsuccessfulAsDisplayedWith(String status) {
+    public void registration_is_successful_unsuccessful_as_displayed_with(String status) {
         String bodyText = driver.findElement(By.tagName("body")).getText();
 
         if (status.equals("success")) {
@@ -101,4 +100,5 @@ public class StepDefinitions {
             }
         }
     }
+
 }
