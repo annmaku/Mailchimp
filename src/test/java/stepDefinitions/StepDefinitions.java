@@ -22,6 +22,7 @@ public class StepDefinitions {
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Selenium\\chromedriver.exe");
         driver = new ChromeDriver();  //start chrome
         driver.get("https://login.mailchimp.com/signup/");   //go to website
+        driver.manage().window().maximize();
     }
 
     @Given("I accept cookies")
@@ -49,7 +50,6 @@ public class StepDefinitions {
         WebElement password = driver.findElement(By.id("new_password"));
         password.sendKeys(string3);
     }
-
 
     @When("I press the sign up button")
     public void i_press_the_sign_up_button() {
@@ -81,8 +81,8 @@ public class StepDefinitions {
         }
 
         else if (bodyText.contains("Please enter a value")){
-            boolean textEvilTwin = bodyText.contains("Please enter a value");
-            assertTrue(textEvilTwin);
+            boolean textEmailMissing = bodyText.contains("Please enter a value");
+            assertTrue(textEmailMissing);
         }
 
         else{

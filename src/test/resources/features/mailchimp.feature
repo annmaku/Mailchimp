@@ -12,9 +12,9 @@ Feature: Sign up a new user to Mailchimp
     When I press the sign up button
     Then I am registered as a new user
     Examples:
-      | email                     | username                                                                                                  | password       |
-      | carrot13575@gmail.com     | carrot13575                                                                                               | 3GreenCarrots# |
-      | strawberry13571@gmail.com | strawberry13571strawberry13571strawberry13571strawberry13571strawberry13571strawberry13571strawberry13571 | 3GreenCarrots# |
-      | potato13579@gmail.com     | potato                                                                                                    | 3GreenCarrots# |
-      |                           | lemon975346                                                                                               | 3GreenCarrots# |
+      | email                     | username                                                                                                  | password   |
+      | carrot13575@gmail.com     | carrot13575                                                                                               | Asdf123#   |
+      | strawberry13571@gmail.com | strawberry13571strawberry13571strawberry13571strawberry13571strawberry13571strawberry13571strawberry13571 | Asdf123# # |
+      | potato13579@gmail.com     | potato                                                                                                    | Asdf123# # |
+      |                           | lemon13579                                                                                                | Asdf123# # |
 
