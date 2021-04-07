@@ -71,13 +71,12 @@ public class StepDefinitions {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(signUpButton));
 
-        if (signUpButton.isDisplayed()) {
-            signUpButton.click();
-        }
+        signUpButton.click();
     }
 
+
     @Then("Registration is successful\\/unsuccessful, as displayed with {string}")
-    public void registration_is_successful_unsuccessful_as_displayed_with(String status) {
+    public void registrationIsSuccessfulUnsuccessfulAsDisplayedWith(String status) {
         String bodyText = driver.findElement(By.tagName("body")).getText();
 
         if (status.equals("success")) {
@@ -101,8 +100,5 @@ public class StepDefinitions {
                 System.out.println("Something went wrong.");
             }
         }
-
     }
-
-
 }
