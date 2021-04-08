@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -36,6 +37,10 @@ public class StepDefinitions {
     public void i_accept_cookies() {
         WebElement cookies = driver.findElement(By.id("onetrust-accept-btn-handler"));
         WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,1000)");        // scroll down so that cookies buttons don't line up with signup button
+
         wait.until(ExpectedConditions.elementToBeClickable(cookies));
         if (cookies.isDisplayed()) {
             cookies.click();
